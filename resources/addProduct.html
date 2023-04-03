@@ -38,10 +38,6 @@
     <body class = "background">
         <!-- <script type = "text/javascript" src = "resources/scripts/Product.js"></script> -->
         <div>
-            <button class = "button" onclick="location.href='index.html'">Log Out</button>
-            <button class = "backbutton" onclick="location.href='editinventory.html'">Back</button>
-        </div>
-        <div>
             <!-- onsubmit="location.href='personalhp.html'" action="personalhp.html" -->
                 <form class="addinventory" onsubmit="return false;" method="post">
                     <label for ="productName">Product Name:</label>
@@ -50,9 +46,10 @@
                     <input type = "number" min="0" name="productPrice" id="productPrice"/>
                     <label for = "productType">Product Type</label>
                     <select name = "productType" id="productType" multiple>
-                        <option value ="Clothing">Clothing</option>
-                        <option value ="Card">Card</option>
-                        <option value ="Miscellaneous">Miscellaneous</option>
+                        <option value ="Flowers">Flowers</option>
+                        <option value ="Tools">Tools</option>
+                        <option value ="SoilMulch">Soil/Mulch</option>
+                        <option value ="Edible Plants">Edible Plant</option>
                     </select>
                     <!-- <input type = "text" name="productType" id="productType"/> -->
                     <label for = "qty">Quantity Available:</label>
