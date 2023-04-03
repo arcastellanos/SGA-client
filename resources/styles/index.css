@@ -1,0 +1,29 @@
+.login-button
+{
+    float: right;
+    margin-top: 10px;
+    font-size: medium;
+    
+}
+
+.mainheader-mnglogin
+{
+    color: black;
+    margin-top: 100px;
+    font-style:normal;
+    border: 2px black;
+    text-align: center;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+}
+
+.background-addinventory
+{
+    margin-top: 150px;
+}
+
+.mnghome
+{
+    margin-top: 100px;
+
+}
