@@ -1,3 +1,13 @@
+.toppage
+{
+    color: #71CC40;
+}
+
+.container-fluid
+{
+    color: #71CC40;
+}
+
 .logout-button
 {
     margin-left: 350px;
@@ -64,4 +74,97 @@
 {
     float: right;
     width: 50%;
+}
+
+.carousel-inner-image1
+{
+    width: 300px;
+    height: 100px;
+}
+
+.card
+{
+    margin-top: 100px;
+
+}
+
+.column3
+{
+    float: right;
+    width: 33%;
+}
+
+.column4
+{
+    float: center;
+    width: 34%;
+}
+
+.column5
+{
+    float: left;
+    width: 33%;
+}
+
+.mainheader_signup
+{
+    color: black;
+    font-style:normal;
+    border: 2px black;
+    text-align: center;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+}
+
+#checkoutform
+{
+    float: left;
+    width: 50%;
+}
+
+#checkoutsummary
+{
+    float: right;
+    width: 50%;
+}
+
+#checkoutsummary_jumbo
+{
+    background-color: #71CC40;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.checkoutform {
+    width: 100%;
+    margin: 8px 0;
+    font-size: medium;
+    font-weight: 1000;
+    display: flex;
+   flex-direction: column;
+   background: #828A8F;
+   padding: 4vh 3vh;
+   text-align: center;
+   margin-top: 50;
+}
+
+/* Float four columns side by side */
+.column 
+{
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+  
+  /* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+.row:after 
+{
+    content: "";
+    display: table;
+    clear: both;
 }
