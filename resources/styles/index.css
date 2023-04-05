@@ -1,11 +1,16 @@
-.login-button
+.logout-button
 {
-    float: right;
-    margin-top: 10px;
+    margin-left: 350px;
+    margin-top: 7px;
     font-size: medium;
-    
 }
 
+.login-button
+{
+    margin-left: 500px;
+    margin-top: 7px;
+    font-size: medium;
+}
 .mainheader-mnglogin
 {
     color: black;
@@ -30,5 +35,33 @@
 .adjustinventory
 {
     margin-top: 100px;
+}
 
+.aboutimage
+{
+    margin-top: 100px;
+    margin-left: 600px;
+}
+
+.mainheader-aboutus
+{
+    color: rgb(63, 171, 20);
+    margin-top: 100px;
+    font-style:normal;
+    border: 2px black;
+    margin-left: 200px;
+    /* text-align: left; */
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+}
+.column1
+{
+    float: left;
+    width: 50%;
+}
+
+.column2
+{
+    float: right;
+    width: 50%;
 }
