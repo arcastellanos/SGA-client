@@ -25,21 +25,21 @@ function handleOnLoad()
 // const songs = [];
 
 let app = document.getElementById("app");
-let songCount = 0
+//let songCount = 0
 // let songs = JSON.parse(localStorage.getItem('mySongs') ? JSON.parse(localStorage.getItem('mySongs')) )
 
 function createTable()
 {   
     
     
-    var songs = JSON.parse(localStorage.getItem("mysongs")) ? JSON.parse(localStorage.getItem("mysongs")) : []; 
+    var products = JSON.parse(localStorage.getItem("mysongs")) ? JSON.parse(localStorage.getItem("mysongs")) : []; 
     
     document.getElementById("app").innerHTML = "";
     let table = document.createElement('TABLE')
     table.border = '1'
-    table.id = 'songsTable'
+    table.id = 'productTable'
     let tableBody = document.createElement('TABLEBODY')
-    tableBody.id = 'songsTableBody'
+    tableBody.id = 'productsTableBody'
     table.appendChild(tableBody)
 
     let tr = document.createElement('TR')
@@ -47,42 +47,42 @@ function createTable()
 
     let th1 = document.createElement('TH')
     th1.width = 500
-    th1.appendChild(document.createTextNode('Song Title'))
+    th1.appendChild(document.createTextNode('Product Name'))
     tr.appendChild(th1);
 
     let th2 = document.createElement('TH')
     th2.width = 500
-    th2.appendChild(document.createTextNode('Song Artist'))
+    th2.appendChild(document.createTextNode('Price'))
     tr.appendChild(th2);
 
     let th3 = document.createElement('TH')
     th3.width = 200
-    th3.appendChild(document.createTextNode('Date'))
+    th3.appendChild(document.createTextNode('Category'))
     tr.appendChild(th3);
 
     let thf = document.createElement('TH')
     thf.width = 200
-    thf.appendChild(document.createTextNode('Favorited'))
+    thf.appendChild(document.createTextNode('Image url'))
     tr.appendChild(thf);
 
-    let th4 = document.createElement('TH')
-    th4.appendChild(document.createTextNode('Favorite Song'))
-    tr.appendChild(th4);
+    // let th4 = document.createElement('TH')
+    // th4.appendChild(document.createTextNode('Favorite Song'))
+    // tr.appendChild(th4);
 
-    let th5 = document.createElement('TH')
-    th5.appendChild(document.createTextNode('Delete Song'))
-    tr.appendChild(th5);
+    // let th5 = document.createElement('TH')
+    // th5.appendChild(document.createTextNode('Delete Song'))
+    // tr.appendChild(th5);
 
-    songs.forEach((song)=>
+    Products.forEach((products)=>
     {
-        if (!song.deleted) {
+        if (!products.deleted) {
             let tr1 = document.createElement('TR')
             tableBody.appendChild(tr1)
 
             let td1 = document.createElement('TD')
             td1.width = 500
-            td1.textContent = song.songTitle
-            console.log(song.songTitle)
+            td1.textContent = products.songTitle
+            console.log(products.songTitle)
             tr1.appendChild(td1)
 
             let td11 = document.createElement('TD')
@@ -104,7 +104,7 @@ function createTable()
             let fvButton = document.createElement('button');
             fvButton.textContent = "Favorite"
             fvButton.onclick = function(){
-                song.favorited = !song.favorited
+                song.favorited = !products.favorited
                 localStorage.setItem('mysongs', JSON.stringify(songs))
                 createTable()
             }
