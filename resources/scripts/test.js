@@ -163,7 +163,7 @@ async function EditProduct(productID){
                 productCategory : Products[i].productCategory,
                 productPrice : localProductPrice,
                 productUrl : "test", //maybe change this if the url stuff ever gets fixed
-                managerID : 0
+                managerID : 1
             }
         }
     }
@@ -178,7 +178,7 @@ async function EditProduct(productID){
         },
         body: JSON.stringify(newProduct),
     });
-    // location.reload()
+    location.reload()
     handleOnLoad()
 }
 
@@ -195,7 +195,8 @@ async function DeleteProduct(ProductID){
                 productName : Products[i].productName,
                 productCategory : Products[i].productCategory,
                 productPrice : localProductPrice,
-                productURL : Products[i].productURL
+                productURL : Products[i].productURL,
+                managerID : 1
             }
             
         }
@@ -251,7 +252,8 @@ document.querySelector('#Product').addEventListener('submit', function(e){
         ProductName: e.target.elements.ProductName.value, 
         ProductCategory: e.target.elements.ProductCategory.value,
         ProductPrice:e.target.elements.ProductPrice.value,
-        ProductURL: e.target.elements.ProductURL.value
+        ProductURL: e.target.elements.ProductURL.value,
+        ManagerID: 1
         
     }
     fetch(url, {
