@@ -185,32 +185,19 @@ async function EditProduct(productID){
 
 
 async function DeleteProduct(ProductID){
-    let newProduct = 2
-
-
-    for(let i = 0; i < Products.length; i++){
-        if(Products[i].ProductID == ProductID){
-            newProduct = {
-                productID : Products[i].productID,
-                productName : Products[i].productName,
-                productCategory : Products[i].productCategory,
-                productPrice : localProductPrice,
-                productURL : Products[i].productURL,
-                managerID : 1
-            }
-            
-        }
-    }
+    
     // console.log(newProduct.ProductName)
+    console.log(ProductID);
     await fetch(`${url}/${ProductID}`, {
-        method: "PUT",
+        method: "DELETE",
         headers: {
           accept: "*/*",
           "content-type": "application/json",
         },
-        body: JSON.stringify(newProduct),
+        
     });
-    location.reload();
+    console.log("Past the fetch");
+    //location.reload();
     handleOnLoad()
 }
 
