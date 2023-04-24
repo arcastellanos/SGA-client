@@ -3,7 +3,7 @@ const url = "https://localhost:7082/api/products";
 let app = document.getElementById("app")
 let Products = []
 
-function handleOnLoad(){
+function handleOnLoad(url){
     
     fetch(url)
     .then(function (response) {
