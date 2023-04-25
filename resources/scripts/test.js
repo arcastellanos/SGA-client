@@ -48,7 +48,7 @@ function addRow(product)
     
     let td5 = document.createElement('TD')
     td5.width = 100
-    td5.appendChild(document.createTextNode(`${product.productURL}`))
+    td5.appendChild(document.createTextNode(`${product.productUrl}`))
     tr.appendChild(td5)
 
     
@@ -126,9 +126,11 @@ function createTable()
         td4.appendChild(document.createTextNode(`${product.productPrice}`))
         tr.appendChild(td4)
         
-        let td5 = document.createElement('TD')
+        let td5 = document.createElement('img')
         td5.width = 100
-        td5.appendChild(document.createTextNode(`${product.productURL}`))
+        src = product.productUrl
+        td5.src = src
+        //td5.appendChild(document.createTextNode(`${product.productUrl}`))
         tr.appendChild(td5)
 
 
