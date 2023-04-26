@@ -142,7 +142,7 @@ function createTable()
 
         
         let newBut2 = document.createElement('button')
-        newBut2.setAttribute("onclick", `DeleteProduct('${product.productID}')`)
+        newBut2.setAttribute("onclick", 'DeleteProduct(\'' + product.productID + '\')')
         newBut2.style = 'margin: 20px; padding: 10px; height: 40px'
         newBut2.textContent = "Delete"
         tr.appendChild(newBut2)
@@ -186,11 +186,11 @@ async function EditProduct(productID){
 
 
 
-async function DeleteProduct(ProductID){
+function DeleteProduct(ProductID){
     
     // console.log(newProduct.ProductName)
     console.log(ProductID);
-    await fetch(`${url}/${ProductID}`, {
+    fetch(`${url}/${ProductID}`, {
         method: "DELETE",
         headers: {
           accept: "*/*",
@@ -199,8 +199,8 @@ async function DeleteProduct(ProductID){
         
     });
     console.log("Past the fetch");
-    //location.reload();
-    handleOnLoad()
+    location.reload();
+    //handleOnLoad()
 }
 
 // async function FavoriteSong(id){
