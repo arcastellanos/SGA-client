@@ -165,7 +165,39 @@ async function EditProduct(productID){
                 productCategory : Products[i].productCategory,
                 productPrice : localProductPrice,
                 productUrl : "test", //maybe change this if the url stuff ever gets fixed
-                managerID : 1
+                managerID : 1,
+                deleted : false
+            }
+        }
+    }
+   console.log(newProduct)
+    
+
+    await fetch(`${url}/${productID}`, {
+        method: "PUT",
+        headers: {
+          accept: "*/*",
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+    });
+    location.reload()
+    handleOnLoad()
+}
+//Delete using PUT instead of DELETE
+async function DeleteProduct(productID){
+    let newProduct = 2
+    for(let i = 0; i < Products.length; i++){
+        if(Products[i].productID == productID){
+            console.log(Products[i].title)
+            newProduct = {
+                productID : Products[i].productID,
+                productName : Products[i].productName,
+                productCategory : Products[i].productCategory,
+                productPrice : Products[i].productPrice,
+                productUrl : "test", //maybe change this if the url stuff ever gets fixed
+                managerID : 1,
+                deleted : true
             }
         }
     }
@@ -186,22 +218,22 @@ async function EditProduct(productID){
 
 
 
-function DeleteProduct(ProductID){
+// function DeleteProduct(ProductID){
     
-    // console.log(newProduct.ProductName)
-    console.log(ProductID);
-    fetch(`${url}/${ProductID}`, {
-        method: "DELETE",
-        headers: {
-          accept: "*/*",
-          "content-type": "application/json",
-        },
+//     // console.log(newProduct.ProductName)
+//     console.log(ProductID);
+//     fetch(`${url}/${ProductID}`, {
+//         method: "DELETE",
+//         headers: {
+//           accept: "*/*",
+//           "content-type": "application/json",
+//         },
         
-    });
-    console.log("Past the fetch");
-    location.reload();
-    //handleOnLoad()
-}
+//     });
+//     console.log("Past the fetch");
+//     location.reload();
+//     //handleOnLoad()
+// }
 
 // async function FavoriteSong(id){
 //     let newSong = 2
@@ -242,7 +274,8 @@ document.querySelector('#Product').addEventListener('submit', function(e){
         ProductCategory: e.target.elements.ProductCategory.value,
         ProductPrice:e.target.elements.ProductPrice.value,
         ProductURL: e.target.elements.ProductUrl.value,
-        ManagerID: 1
+        ManagerID: 1,
+        Deleted: false
         
     }
     fetch(url, {
