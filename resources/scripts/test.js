@@ -241,7 +241,7 @@ document.querySelector('#Product').addEventListener('submit', function(e){
         ProductName: e.target.elements.ProductName.value, 
         ProductCategory: e.target.elements.ProductCategory.value,
         ProductPrice:e.target.elements.ProductPrice.value,
-        ProductURL: e.target.elements.ProductURL.value,
+        ProductURL: e.target.elements.ProductUrl.value,
         ManagerID: 1
         
     }
@@ -255,7 +255,38 @@ document.querySelector('#Product').addEventListener('submit', function(e){
       });
     location.reload()
     handleOnLoad()
+    e.target.elements.ProductName.value = ''
+    e.target.elements.ProductCategory.value = ''
     e.target.elements.ProductPrice.value = ''
+    e.target.elements.ProductUrl.value = ''
+
     
 })
+
+// document.querySelector('#Product').addEventListener('submit', function(e){
+//     e.preventDefault()
+   
+//     let product ={
+//         Title: e.target.elements.Title.value, 
+//         Artist: e.target.elements.Artist.value, 
+//         Favorited: false, 
+//         Deleted: false, 
+//         DateAdded: date
+//     }
+//     fetch(url, {
+//         method: "POST",
+//         headers: {
+//           accept: "*/*",
+//           "content-type": "application/json",
+//         },
+//         body: JSON.stringify(song),
+//       });
+//     location.reload()
+//     handleOnLoad()
+//     e.target.elements.Title.value = ''
+//     e.target.elements.Artist.value = ''
+//     e.target.elements.Title.value = ''
+//     e.target.elements.Artist.value = ''
+// })
+
 
