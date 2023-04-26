@@ -96,7 +96,7 @@ function createTable()
     tr.appendChild(th4)
 
     let th5 = document.createElement('TH')
-    th5.width = 200
+    th5.width = 400
     th5.appendChild(document.createTextNode('Product Image Url'))
     tr.appendChild(th5)
     
