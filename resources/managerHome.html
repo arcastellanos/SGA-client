@@ -55,80 +55,30 @@
   </header>       
   <h2 class = "mainheader_managerhome" style="text-align: center;">Manager Main Terminal</h2>
   <body onload = "handleOnLoad()">
+    <br>
+    <br>
+    <br>
+    <h1>Products</h1>
+    <form id ="Product">
+      <input type="text" placeholder="Enter Product Name" name ="ProductName">
+      <input type="text" placeholder="Enter Product Category" name ="ProductCategory">
+      <input type="text" placeholder="Enter Price" name ="ProductPrice">
+      <input type="text" placeholder="Enter Image URL" name ="URL">
+      <button type="text" submit> Add Product</button>
+  </form>
+  <br>
+  <br>
+  <h3>Edit Price</h3>
+  <h6>Type in information then click edit button</h6>
+  <form id ="editProductForm">
+      
+  <input id="editPrice" type="text" placeholder="Enter Price" name ="ProductPrice">
+  </form>
     <div id ="app"></div>
-
+<script src="./scripts/test.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   
 </body>
 
-<body>
-    <body class = "mnghome">
-        <!-- <div class = "employeeChoice">
-            <button style="width: 50%; padding: 20px; margin: 10px; margin-left:350px; margin-right:350px; background-color:#0a0a23; color: #fff" onclick="location.href='addProduct.html'">Add Inventory</button>
-            <button style="width: 50%; padding: 20px; margin: 10px; margin-left:350px; margin-right:350px; background-color:#0a0a23; color: #fff" onclick="location.href='adjustProduct.html'">Adjust Inventory</button>
-        </div> 
-    </body>
 
-    <div>
-        <h2 class = "mainheader_managerhome" style="text-align: center;">Add Products:</h2>
-         onsubmit="location.href='personalhp.html'" action="personalhp.html" 
-            <form class="addinventory" onsubmit="return false;" method="post">
-                <label for ="productName">Product Name:</label>
-                <input type = "text" name="productName" width="25" id="productName"/>
-                <label for = "productPrice">Product Price:</label>                     change to double
-                <input type = "number" min="0" name="productPrice" id="productPrice"/>
-                <label for = "productType">Product Type</label>
-                <select name = "productType" id="productType" multiple>
-                    <option value ="Flowers">Flowers</option>
-                    <option value ="Tools">Tools</option>
-                    <option value ="SoilMulch">Soil/Mulch</option>
-                    <option value ="Edible Plants">Edible Plant</option>
-                </select>
-                 <input type = "text" name="productType" id="productType"/> 
-                <label for = "qty">Quantity Available:</label> 
-                <input type = "number" name="qty" id="qty"/> 
-                <label for = "productURL">Image URL:</label>
-                <input type = "text" name="productURL" id="productURL"/>
-                <input type = "submit" value = "Confirm to Add Product" onclick="postProducts() ; location.href='personalhp.html'">
-            </form>
-    </div>
-
-    <div>
-        <h2 class = "mainheader_managerhome" style="text-align: center;">Adjust Products:</h2>
-        <form class="adjustinventory" method="edit" onsubmit="return false;">
-            <label for = "productID">Enter Product ID:</label>
-            <input name="productID" id="productID"/>
-            <label for = "productPrice">Edit Product Price:</label>
-            <input name="productPrice" id="quantityAvailable"/> 
-            <label for = "inInventory">In Inventory? (If not in Inventory enter 0)</label> 
-             <input name="inInventory" id="inInventory"/> 
-            <input type = "submit" value = "Click to Edit Product" onclick="editProduct() ; location.href='editinventory.html'" >
-        </form>
-    </div>
-      -->
-      <div id = "app"></div>
-      <h1>Products</h3>
-      <form id ="Product">
-          <input type="text" placeholder="Enter Product Name" name ="ProductName">
-          <input type="text" placeholder="Enter Product Category" name ="ProductCategory">
-          <input type="text" placeholder="Enter Price" name ="ProductPrice">
-          <input type="text" placeholder="Enter Image URL" name ="URL">
-          <button type="text" submit> Add Product</button>
-      </form>
-      <br>
-      <br>
-      <h3>Edit Price</h3>
-      <h6>Type in information then click edit button</h6>
-      <form id ="editProductForm">
-          
-      <input id="editPrice" type="text" placeholder="Enter Price" name ="ProductPrice">
-      </form>
-  
-      <script src = "./scripts/test.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  
-
-
-      
-</body>
 </html>

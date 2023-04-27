@@ -186,31 +186,31 @@ async function EditProduct(productID){
 }
 //Delete using PUT instead of DELETE
 async function DeleteProduct(productID){
-    let newProduct = 2
-    for(let i = 0; i < Products.length; i++){
-        if(Products[i].productID == productID){
-            console.log(Products[i].title)
-            newProduct = {
-                productID : Products[i].productID,
-                productName : Products[i].productName,
-                productCategory : Products[i].productCategory,
-                productPrice : Products[i].productPrice,
-                productUrl : "test", //maybe change this if the url stuff ever gets fixed
-                managerID : 1,
-                deleted : true
-            }
-        }
-    }
-   console.log(newProduct)
+//     let newProduct = 2
+//     for(let i = 0; i < Products.length; i++){
+//         if(Products[i].productID == productID){
+//             console.log(Products[i].title)
+//             newProduct = {
+//                 productID : Products[i].productID,
+//                 productName : Products[i].productName,
+//                 productCategory : Products[i].productCategory,
+//                 productPrice : Products[i].productPrice,
+//                 productUrl : "test", //maybe change this if the url stuff ever gets fixed
+//                 managerID : 1,
+//                 deleted : true
+//             }
+//         }
+//     }
+   console.log(productID)
     
 
     await fetch(`${url}/${productID}`, {
-        method: "PUT",
+        method: "DELETE",
         headers: {
           accept: "*/*",
           "content-type": "application/json",
         },
-        body: JSON.stringify(newProduct),
+        //body: JSON.stringify(newProduct),
     });
     location.reload()
     handleOnLoad()

@@ -37,17 +37,16 @@ let renderItems = function(){
     html += "</div>"
     document.getElementById("cards").innerHTML = html;
 }
-function AddToCart(productIDtoadd){//NOT WORKING
-    cart = "0"
-    localStorage.setItem("cart", cart)
-    if(JSON.parse(localStorage.getItem("cart")) != null){
-        cart = JSON.parse(localStorage.getItem("cart"))
-        itemtoadd = {productID : productIDtoadd}
-        cart.unshift(itemtoadd)
-
-        localStorage.setItem("cart", cart) 
-        console.log(JSON.parse(localStorage.getItem("cart")))
-    }else{
-        alert("Error adding to cart")
-    }
+function AddToCart(productIDtoadd) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  if (JSON.parse(localStorage.getItem("cart")) != null) {
+    cart = JSON.parse(localStorage.getItem("cart"));
+    itemtoadd = { productID: productIDtoadd };
+    cart.unshift(itemtoadd);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log(JSON.parse(localStorage.getItem("cart")));
+    alert("Added to cart");
+  } else {
+    alert("Error adding to cart");
+  }
 }

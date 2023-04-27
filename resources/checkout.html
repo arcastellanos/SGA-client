@@ -14,7 +14,7 @@
 </head>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #71CC40;">
-    <img src="./images/sgalogo.png" alt="SGA Main Logo" style="width:60px;height:60px;">  
+    <img src="./images/sgalogo.png" alt="SGA Main Logo" style="width:100px;height:100px;">  
       <div class="container-fluid">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,59 +49,46 @@
                 <li class="nav-item2">
                   <a class="nav-link" style="color: white" onclick="location.href='education.html'">Education</a>
                 </li>
-            <li class="login-button">
-              <button onclick="location.href='Homepage.html'">Log Out</button>  
+            <!-- <li class="login-button">
+              <button onclick="location.href='Homepage.html'">Log Out</button>   -->
             </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
-<body class = "background" style="margin-top: 100px;">
-    <script type = "text/javascript" src = "resources/scripts/Customer.js"></script>
-    <h2 class = "mainheader_signup">Checkout</h2>
-    <div class = "column" id = "checkoutform">
-        <form class ="checkoutform" action="orderconfirmation.html">
-            <label for ="cardnumber">Card Number</label>
-            <input type = "text" name="cardnumber" id="cardnumber"/>
-            <label for = "expdate">Expiration Date</label>
-            <input type = "date" name="expdate" id="expdate"/>
-            <label for = "cvv">CVV (XXX Number On Back of the Card)</label>
-            <input type = "text" name="cvv" id="cvv"/>
-            <label for = "streetname">Street Name</label>
-            <input type = "text" name="streetname" id="streetname"/>
-            <label for = "city">City</label>
-            <input type = "text" name="city" id="city"/>
-            <label for ="state">State</label>
-            <input type = "text" name="state" id="state"/>
-            <label for ="zip">ZIP Code</label>
-            <input type = "text" name="zip" id="zip"/>
-
-            <input type = "submit" value = "Checkout" onclick="postCustomer() ; location.href='orderconfirmation.html'">
-        </form>
+<body onload= "handleOnLoad()"class = "background" style="margin-top: 100px;">
+  <h2 class = "mainheader_signup">Checkout</h2>
+  <div class = "column" id = "checkoutform">
+    <form class ="checkoutform" action="orderconfirmation.html">
+      <label for ="cardnumber">Card Number</label>
+      <input type = "text" name="cardnumber" id="cardnumber"/>
+      <label for = "expdate">Expiration Date</label>
+      <input type = "date" name="expdate" id="expdate"/>
+      <label for = "cvv">CVV (XXX Number On Back of the Card)</label>
+      <input type = "text" name="cvv" id="cvv"/>
+      <label for = "streetname">Street Name</label>
+      <input type = "text" name="streetname" id="streetname"/>
+      <label for = "city">City</label>
+      <input type = "text" name="city" id="city"/>
+      <label for ="state">State</label>
+      <input type = "text" name="state" id="state"/>
+      <label for ="zip">ZIP Code</label>
+      <input type = "text" name="zip" id="zip"/>
+      
+      <input type = "submit" value = "Checkout" onclick="postCustomer() ; location.href='orderconfirmation.html'">
+    </form>
+  </div>
+  <div class = "column" id = "checkoutsummary">
+    <div>
+      <div class = "jumbotron" id = "checkoutsummary_jumbo">
+        <h3 class = "display-6" id="checkoutsummary_jumbo"><img src="./images/shopping cart.jpg" alt=" CART " style="width: 30px; height:30px;">  Order Summary</h3>
+      </div>
+      
     </div>
-    <div class = "column" id = "checkoutsummary">
-        <div>
-            <div class = "jumbotron" id = "checkoutsummary_jumbo">
-                <h3 class = "display-6" id="checkoutsummary_jumbo"><img src="https://www.pngitem.com/pimgs/m/364-3641638_shopping-cart-black-and-white-hd-png-download.png" alt=" CART " style="width: 30px; height:30px;">  Order Summary</h3>
-            </div>
-            <h4>
-            <ul>
-                <li>
-                    Hanging Fern
-                    Quantity: 1
-                    $10
-                </li>
-                <li>
-                    Sunflower
-                    Quantity: 3
-                    $9.50
-                </li>
-            </ul>
-            <h3 style="text-align: center">Total: $19.50</h3>
-            </h4>
-        </div>
-    </div>
-       
+  </div>
+  <div id = "cards"></div>
+  
+  <script type = "text/javascript" src = "./scripts/checkout.js"></script>
 </body>   
 </html>
