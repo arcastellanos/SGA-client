@@ -101,7 +101,11 @@ function createTable()
     tr.appendChild(th5)
     
     Products.forEach((product)=>{
-        if(product.deleted == true){return;}
+        if(product.deleted == true)
+        {
+
+        }
+        else{
         let tr = document.createElement('TR')
         tableBody.appendChild(tr)
         
@@ -124,7 +128,9 @@ function createTable()
         let td4 = document.createElement('TD')
         td4.width = 100
         td4.appendChild(document.createTextNode(`${product.productPrice}`))
+        
         tr.appendChild(td4)
+        
         
         let td5 = document.createElement('img')
         td5.width = 100
@@ -148,7 +154,7 @@ function createTable()
         tr.appendChild(newBut2)
         
 
-    })
+    }})
     
     app.appendChild(table)
 }
@@ -158,21 +164,17 @@ async function EditProduct(productID){
     let localProductPrice = document.getElementById("editPrice").value
     for(let i = 0; i < Products.length; i++){
         if(Products[i].productID == productID){
-            console.log(Products[i].title)
             newProduct = {
                 productID : Products[i].productID,
                 productName : Products[i].productName,
                 productCategory : Products[i].productCategory,
                 productPrice : localProductPrice,
-                productUrl : "test", //maybe change this if the url stuff ever gets fixed
-                managerID : 1,
-                deleted : false
+                productUrl : Products[i].productUrl,
+                deleted : false,
+                managerID : 1
             }
         }
     }
-   console.log(newProduct)
-    
-
     await fetch(`${url}/${productID}`, {
         method: "PUT",
         headers: {
@@ -180,38 +182,36 @@ async function EditProduct(productID){
           "content-type": "application/json",
         },
         body: JSON.stringify(newProduct),
-    });
+
+    });console.log(newProduct)
     location.reload()
     handleOnLoad()
 }
 //Delete using PUT instead of DELETE
 async function DeleteProduct(productID){
-//     let newProduct = 2
-//     for(let i = 0; i < Products.length; i++){
-//         if(Products[i].productID == productID){
-//             console.log(Products[i].title)
-//             newProduct = {
-//                 productID : Products[i].productID,
-//                 productName : Products[i].productName,
-//                 productCategory : Products[i].productCategory,
-//                 productPrice : Products[i].productPrice,
-//                 productUrl : "test", //maybe change this if the url stuff ever gets fixed
-//                 managerID : 1,
-//                 deleted : true
-//             }
-//         }
-//     }
-   console.log(productID)
-    
-
+    let newProduct = 2
+    for(let i = 0; i < Products.length; i++){
+        if(Products[i].productID == productID){
+            newProduct = {
+                productID : Products[i].productID,
+                productName : Products[i].productName,
+                productCategory : Products[i].productCategory,
+                productPrice : Products[i].productPrice,
+                productUrl : Products[i].productUrl,
+                deleted : true,
+                managerID : 1
+            }
+        }
+    }
     await fetch(`${url}/${productID}`, {
-        method: "DELETE",
+        method: "PUT",
         headers: {
           accept: "*/*",
           "content-type": "application/json",
         },
-        //body: JSON.stringify(newProduct),
-    });
+        body: JSON.stringify(newProduct),
+
+    });console.log(newProduct)
     location.reload()
     handleOnLoad()
 }
@@ -269,11 +269,11 @@ async function DeleteProduct(productID){
 document.querySelector('#Product').addEventListener('submit', function(e){
     e.preventDefault()
     let product ={
-        ProductID: e.target.elements.ProductID.value, 
+
         ProductName: e.target.elements.ProductName.value, 
         ProductCategory: e.target.elements.ProductCategory.value,
         ProductPrice:e.target.elements.ProductPrice.value,
-        ProductURL: e.target.elements.ProductUrl.value,
+        ProductUrl: e.target.elements.URL.value,
         ManagerID: 1,
         Deleted: false
         
