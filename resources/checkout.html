@@ -60,13 +60,15 @@
 <body onload= "handleOnLoad()"class = "background" style="margin-top: 100px;">
   <h2 class = "mainheader_signup">Checkout</h2>
   <div class = "column" id = "checkoutform">
-    <form class ="checkoutform" action="orderconfirmation.html">
+    <form class ="checkoutform" id="checkout">
+      <label for ="cardnumber">Card Holder Name</label>
+      <input type = "text" name="CHName" id="CHName"/>
       <label for ="cardnumber">Card Number</label>
       <input type = "text" name="cardnumber" id="cardnumber"/>
       <label for = "expdate">Expiration Date</label>
       <input type = "date" name="expdate" id="expdate"/>
       <label for = "cvv">CVV (XXX Number On Back of the Card)</label>
-      <input type = "text" name="cvv" id="cvv"/>
+      <input type = "text" name="cvv" id="ccv"/>
       <label for = "streetname">Street Name</label>
       <input type = "text" name="streetname" id="streetname"/>
       <label for = "city">City</label>
@@ -76,7 +78,7 @@
       <label for ="zip">ZIP Code</label>
       <input type = "text" name="zip" id="zip"/>
       
-      <input type = "submit" value = "Checkout" onclick="postCustomer() ; location.href='orderconfirmation.html'">
+      <input type = "submit" value = "Checkout">
     </form>
   </div>
   <div class = "column" id = "checkoutsummary">

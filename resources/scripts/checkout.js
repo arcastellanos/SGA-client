@@ -1,4 +1,7 @@
 const url = "https://localhost:7082/api/products";
+const checkoutUrl = "https://localhost:7082/api/CardInformation"
+const deliveryUrl = "https://localhost:7082/api/Delivery"
+
 let cart = []
 let Products = []
 
@@ -53,6 +56,53 @@ let renderItems = function(){
             html += "</div>"
             document.getElementById("cards").innerHTML = html; 
 }
+
+document.querySelector('#checkout').addEventListener('submit', function(e){
+    e.preventDefault()
+    let newCardNum = document.getElementById("cardnumber").value
+    let newSecurityCode = document.getElementById("ccv").value
+    let newExpDate = document.getElementById("expdate").value
+    let newCHName = document.getElementById("CHName").value
+            let cardInfo = {
+                cardNumber : newCardNum,
+                securityCode : newSecurityCode,
+                expDate : newExpDate,
+                cHName : newCHName
+            }
+            console.log(cardInfo)
+            fetch(checkoutUrl, {
+                method: "POST",
+                headers: {
+                  accept: "*/*",
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(cardInfo),
+              });console.log(cardInfo)
+    //location.reload()
+})
+document.querySelector('#checkout').addEventListener('submit', function(e){
+    e.preventDefault()
+    let street = document.getElementById("streetname").value
+    let city = document.getElementById("city").value
+    let state = document.getElementById("state").value
+    let zip = document.getElementById("zip").value
+            let address = {
+                city : city,
+                zipCode : zip,
+                street : street,
+                state : state,
+                orderID : 4
+            }
+            fetch(deliveryUrl, {
+                method: "POST",
+                headers: {
+                  accept: "*/*",
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(address),
+              });console.log(address)
+    //location.reload()
+})
 
 // function AddToCart(productIDtoadd) {
 //   localStorage.setItem("cart", JSON.stringify(cart));
