@@ -15,10 +15,10 @@ function handleOnLoad(){
       Products.reverse();
       createTable();
     });
-
 }
 
 
+//this is to see if the input of the user is correct 
 
 function addRow(product)
 {
@@ -187,7 +187,6 @@ async function EditProduct(productID){
     location.reload()
     handleOnLoad()
 }
-//Delete using PUT instead of DELETE
 async function DeleteProduct(productID){
     let newProduct = 2
     for(let i = 0; i < Products.length; i++){
@@ -215,56 +214,6 @@ async function DeleteProduct(productID){
     location.reload()
     handleOnLoad()
 }
-
-
-
-// function DeleteProduct(ProductID){
-    
-//     // console.log(newProduct.ProductName)
-//     console.log(ProductID);
-//     fetch(`${url}/${ProductID}`, {
-//         method: "DELETE",
-//         headers: {
-//           accept: "*/*",
-//           "content-type": "application/json",
-//         },
-        
-//     });
-//     console.log("Past the fetch");
-//     location.reload();
-//     //handleOnLoad()
-// }
-
-// async function FavoriteSong(id){
-//     let newSong = 2
-//     let date = new Date()
-//     date = date.toLocaleDateString('en-us')
-
-//     for(let i = 0; i < Songs.length; i++){
-//         if(Songs[i].id == id){
-//             newSong = {
-//                 id : Songs[i].id,
-//                 title : Songs[i].title,
-//                 artist : Songs[i].artist,
-//                 dateAdded : Songs[i].dateAdded,
-//                 deleted : Songs[i].deleted,
-//                 favorited : !Songs[i].favorited
-//             }
-
-//         }
-//     }
-    
-//     await fetch(`${url}/${id}`, {
-//         method: "PUT",
-//         headers: {
-//           accept: "*/*",
-//           "content-type": "application/json",
-//         },
-//         body: JSON.stringify(newSong),
-//       });    
-//       location.reload();
-//       handleOnLoad()
-// }
 
 document.querySelector('#Product').addEventListener('submit', function(e){
     e.preventDefault()
@@ -295,31 +244,5 @@ document.querySelector('#Product').addEventListener('submit', function(e){
 
     
 })
-
-// document.querySelector('#Product').addEventListener('submit', function(e){
-//     e.preventDefault()
-   
-//     let product ={
-//         Title: e.target.elements.Title.value, 
-//         Artist: e.target.elements.Artist.value, 
-//         Favorited: false, 
-//         Deleted: false, 
-//         DateAdded: date
-//     }
-//     fetch(url, {
-//         method: "POST",
-//         headers: {
-//           accept: "*/*",
-//           "content-type": "application/json",
-//         },
-//         body: JSON.stringify(song),
-//       });
-//     location.reload()
-//     handleOnLoad()
-//     e.target.elements.Title.value = ''
-//     e.target.elements.Artist.value = ''
-//     e.target.elements.Title.value = ''
-//     e.target.elements.Artist.value = ''
-// })
 
 
