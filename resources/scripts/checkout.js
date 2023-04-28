@@ -91,7 +91,7 @@ document.querySelector('#checkout').addEventListener('submit', function(e){
                 zipCode : zip,
                 street : street,
                 state : state,
-                orderID : 4
+                orderID : 30
             }
             fetch(deliveryUrl, {
                 method: "POST",
@@ -101,7 +101,7 @@ document.querySelector('#checkout').addEventListener('submit', function(e){
                 },
                 body: JSON.stringify(address),
               });console.log(address)
-    //location.reload()
+    location.reload()
 })
 
 // function AddToCart(productIDtoadd) {

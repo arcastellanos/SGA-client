@@ -19,7 +19,8 @@ function handleOnLoad(){
 let renderItems = function(){
     let html = `<div class = row>`
     Products.forEach(function (Product){
-        html += `
+      if (Product.deleted == 0) {  
+      html += `
                     <div class="card m-4" style="width: 18rem;">
                             <div class="card-body">
                                 <img src="${Product.productUrl}" class="card-img" alt="${Product.productName}" style="width: 150px; height: 100px; object-fit: cover;""
@@ -31,7 +32,10 @@ let renderItems = function(){
                             </div>
                         </div>
                     `;
-          
+      }
+      else {
+        
+      }
       
     })
     html += "</div>"
